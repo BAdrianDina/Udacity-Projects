@@ -1,0 +1,597 @@
+
+
+
+\documentclass{beamer}
+
+\input{defs-beamer}
+
+\title{A Blockchain Solution for\\ Digital Identity Management for Refugees}
+
+\author[Adrian Dina]{Dr. B. Adrian Dina}
+
+\date[Tel Aviv, 03/July/2024]{Udacity:\\ Blockchain Developer \\ 20 July 2024}
+
+
+
+
+
+\begin{document}
+
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+
+
+
+
+\begin{frame}{Project Overview}
+\alert{Introduction}: Refugees often face significant challenges in 
+\vspace{-0.3cm}
+\begin{itemize}
+\item proving their identity and 
+\item integrating into new communities 
+\end{itemize}
+\vspace{-0.2cm}
+due to a lack of reliable identification documents. \newline
+
+\alert{We propose}: A blockchain-based digital identity management system that provide a secure, immutable, and portable solution to address these issues.
+\end{frame}
+
+
+
+\begin{frame}{Traditional Approaches}
+
+\alert{The traditional approach}: We consider the schematic representation of refugee reception in \underline{Germany}; we restrict on the first two steps of the actual registration process: 
+\begin{enumerate}
+\item \underline{Arrival and First Contact}:  
+	\begin{itemize}
+		\item After entering German territory, refugees must make contact with the authorities; this can be done at border posts, police stations, or directly at reception centers.
+		\item Afterwards, refugees are transported to an initial reception center called ''Erstaufnahmeeinrichtung''.
+	\end{itemize}
+\item \underline{Reception and Identification}: 
+	\begin{itemize}
+		\item At the reception center, personal data is recorded, including fingerprints and photographs.
+		\item After verifying the refugee's identity, they undergo a medical examination.
+	\end{itemize}
+\end{enumerate}
+
+\end{frame}
+
+
+
+
+
+\begin{frame}{Some Challenges with Traditional Approaches}
+
+Some challenges regarding the traditional approach in the second step, \underline{Reception and Identification}: 
+\begin{itemize}
+\item Individuals arrive without proper documentation; some may have \underline{lost their documents}, while \underline{others may intentionally} \underline{discard them} to obscure their origins.
+\item This can complicate efforts to ascertain the true identity and background of applicants, which is crucial for security and asylum determination purposes.
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Our Blockchain Solution $(1)$}
+\alert{New Approach}: We propose a blockchain-based digital identity management system (BBDIMS) that can provide a secure, immutable and portable solution to address these issues.
+
+\underline{Arrival and First Contact}:
+\begin{itemize}
+		\item Upon first contact, authorities use a mobile app connected to the blockchain system to create a preliminary digital identity for the refugee; a unique identifier (given by a hashed version of initial biometric data) is generated and recorded on the blockchain, ensuring that the refugee's identity can be tracked securely from the outset.
+		%\item During transport, authorities can update the refugee's digital identity with location data, ensuring a transparent and immutable record of their journey.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}{Our Blockchain Solution $(2)$}
+\underline{Reception and Identification}:
+\begin{itemize}
+		\item Upon arrival at the reception center, detailed biometric data (fingerprints, photographs) are securely recorded using the blockchain system; this data is hashed and stored on-chain, with actual biometric files stored off-chain in a secure, distributed file system (e.g., IPFS). The blockchain ledger records the hash references.
+		\item Smart contracts manage the identity verification process, ensuring that data is immutable and only accessible to authorized entities.
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Our Blockchain Solution $(3)$}
+\underline{Reception and Identification}:
+\begin{itemize}
+		\item The blockchain system verifies the refugee's identity by cross-referencing the newly recorded biometric data with existing records on the blockchain, ensuring no duplication or fraud.
+		\item Once identity is verified, a smart contract triggers the next steps, including medical examination; medical examination results are securely recorded and linked to the refugee's digital identity on the blockchain. This ensures that medical records are tamper-proof and can be accessed by authorized medical personnel only.
+\end{itemize}
+
+\end{frame}
+
+
+
+
+
+
+
+
+\begin{frame}{Our Blockchain Solution $(4)$}
+Some \underline{challenges} related to our steps of consideration:
+\begin{itemize}
+	\item Ensuring immediate and reliable access to the blockchain system for all border posts and police stations, which may have varying levels of technology infrastructure.
+	\item Ensuring the accurate and secure collection of biometric data in a potentially high-stress environment.
+	\item Managing potential duplicates and ensuring accurate identity verification across different locations and systems.
+	\item Balancing transparency and accessibility of medical records with the need to maintain data privacy and comply with regulations.
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Existing Solutions $(1)$}
+%Let's focus on existing solution(s) and analyze the following 
+\alert{Question}: What are the (major) problems in the current system(s)?\newline
+
+\underline{Arrival and First Contact}: 
+\vspace{-0.3cm}
+	\begin{itemize}
+		\item Inefficiencies and Delays; 
+		%manual processes and paperwork at border posts and police stations lead to delays in registering refugees, and a high influx of refugees can overwhelm the existing infrastructure, causing long wait times.
+		\item Lack of Immediate Tracking; 
+		%difficulty in tracking refugees from their point of entry to the reception centers due to disparate and unconnected systems.
+		\item Data Fragmentation; 
+		%initial data collected might not be immediately shared with the reception centers, leading to incomplete records and potential loss of information.
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Existing Solutions $(2)$}
+\underline{Reception and Identification}:
+\vspace{-0.3cm}
+\begin{itemize}
+	%\item \underline{Inconsistent Communication}; between border authorities and reception centers can lead to issues in managing the arrival and processing of refugees.
+	\item Recording Personal Data; 
+	%reliance on manual data entry increases the risk of errors and inconsistencies in refugee records. Further, paper-based records can be lost or damaged, leading to loss of critical information. Without a unified system, there is a risk of creating duplicate records for the same individual, complicating the verification process.
+	\item Identity Verification and Medical Examination; 
+	%sensitive personal and medical information is at risk of being mishandled or accessed by unauthorized personnel, raising privacy and security concerns. 
+\end{itemize}		
+\end{frame}
+
+
+\begin{comment}
+
+\begin{frame}{BBDIMS Solution $(1)$}
+\alert{Question}: Will decentralized features, such as transparency, access, censorship resistance, and resilience, provide value in our use case?\newline
+
+\underline{Transparency}:
+\begin{itemize}
+\item  Trust Building; 
+%transparent processes and records build trust among refugees, authorities, and service providers. Refugees can see and understand how their data is used and verified. 
+\end{itemize}
+\underline{Access}:
+\begin{itemize}
+\item  Portability; 
+%decentralized identity systems allow refugees to access their digital identities from anywhere, without reliance on a single centralized authority or database.
+\item Inclusion; 
+%ensures that refugees, regardless of location, have equal access to their identity records and related services, promoting greater social and economic integration.
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{BBDIMS Solution $(2)$}
+\underline{Censorship resistance}:
+\begin{itemize}
+\item  Autonomy; 
+%decentralized systems prevent any single entity from unilaterally altering or suppressing identity records, protecting refugees from potential misuse of power.
+\item Data Integrity; 
+%ensures that once data is entered into the system, it cannot be censored or manipulated, preserving the integrity of the refugees' identities and records.
+\end{itemize}
+\underline{Resilience}:
+\begin{itemize}
+\item  Fault Tolerance; 
+%decentralized systems are more resilient to failures and attacks. Even if some nodes go offline, the system remains operational, ensuring continuous access to identity records.
+\item Disaster Recovery; 
+%In case of localized disasters or infrastructure failures, decentralized systems can continue to function, ensuring that refugees' identity data is not lost and services can be maintained.
+\end{itemize}
+\end{frame}
+
+
+\end{comment}
+
+
+
+
+
+\begin{frame}{Blockchain: Hyperledger Fabric}
+\alert{Blockchain}: \href{https://www.hyperledger.org/projects/fabric}{Hyperledger Fabric (HF).} \newline
+
+\alert{Consensus Mechanisms}: Practical Byzantine Fault Tolerance (PBFT) and Raft. \newline
+
+Relevant parameters for our use case:
+\begin{itemize}
+	\item Decentralization; medium - suitable for controlled environments.
+	\item Performance; high - over 2000 tps.
+	\item Transaction Throughput; very high, suitable for high-volume applications.
+	\item Scalability; high - supports growing usage efficiently.
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Blockchain: Hyperledger Fabric}
+Relevant parameters for our use case:
+\begin{itemize}
+	\item Privacy and Security; high - robust privacy features and access controls.
+	\item Integration and Flexibility; high - modular and flexible architecture.
+	\item Compliance with Regulations; high - strong support for data protection regulations.
+	\item Ease of Implementation;  moderate - requires moderate expertise for deployment.
+	\item Cost Efficiency; moderate - higher setup and maintenance costs.
+	\item User Experience; high - user-friendly interfaces and systems.
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Estimated Number of Transactions}
+\alert{Question}: How fast the system needs to process transactions to meet demands (and still work well) as usage grows? \newline
+\begin{table}[h!]
+\label{estimation1}
+\resizebox{1\textwidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Activity & Frequency per Refugee & Total Transactions (Annually)\\
+\hline
+\hline
+ Initial Registration & 1 & \alert{100,000} \\
+\hline
+ Identity Verification & 10 & 1,000,000 \\
+\hline
+Data Updates &5 & 500,000 \\
+\hline
+ Access Logs & 20 & 2,000,000 \\
+\hline
+\hline
+ Total Annual Transactions & - & 3,600,000\\
+ \hline
+ Total Monthly Transactions & - & 300,000 \\
+ \hline
+ Total Daily Transactions & -  & 9,860 \\
+  \hline
+ Transactions per Second (tps) & -  & 0.114\\
+\hline
+\end{tabular}}
+\caption{System req. for an estimated number of refugees of 100,000 p.y.}
+\end{table}
+\end{frame}
+
+
+
+\begin{comment}
+\begin{table}[h!]
+\label{estimation2}
+\begin{tabular}{|c|c|}
+\hline
+Capability & Value  \\
+\hline
+\hline
+ Throughput & > 2000 tps \\
+ \hline
+ Scalability & high \\
+ \hline
+ Latency & low \\
+\hline
+\end{tabular}
+\caption{Hyperledger Fabric Capabilities.}
+\end{table}
+\end{comment}
+
+\begin{frame}{Hyperledger Fabric Capabilities}
+\begin{table}[h!]
+\label{estimation3}
+\resizebox{1\textwidth}{!}{%
+\begin{tabular}{|c|c|c|}
+\hline
+Parameter & Requirement &  Hyperledger Fabric Capability \\
+\hline
+\hline
+ Estimated Daily Transactions & 9,860 & high \\
+ \hline
+ Estimated tps & 0.114 & > 2000 \\
+ \hline
+ Scalability and Performance & adequate & high \\
+\hline
+\end{tabular}}
+\end{table}
+\alert{Conclusion}: 
+\begin{itemize}
+\item Given the extremely high transaction throughput of Hyperledger Fabric, the system can theoretically handle up to: \[ 1,728,000,000 \] refugees per day (which is unrealistic for real-world scenarios). 
+\item It shows that Hyperledger Fabric's capacity far exceeds typical and even extreme refugee numbers, ensuring that the system will not collapse under normal or even high-demand conditions.
+\end{itemize}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}{Alternative blockchains}
+We considered the following (alternative) chains:
+\vspace{-0.3cm}
+\begin{table}[h!]
+\label{estimation3}
+\resizebox{1\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|}
+\hline
+Criteria & \alert{Hyperledger Fabric} &  Quorum & Corda  \\
+\hline
+\hline
+ Performance & high & high & medium \\
+ \hline
+ Transaction Throughput in tps & > 200 & > 2000 & 170\\
+ \hline
+ Scalability & high & high & medium \\
+  \hline
+ Privacy and Security & high & high & very high \\
+  \hline
+ Integration and Flexibility & high & high & high \\
+ \hline
+  Compliance with Regulations & high & high & high \\
+  \hline
+  Ease of Implementation & moderate & moderate & moderate \\
+  \hline
+Cost Efficiency & moderate & moderate &  high \\
+ \hline
+ User Experience & high & high & moderate \\
+   \hline
+Consensus Approach & Practical Byzantine Fault Tolerance, Raft & Raft, Istanbul BFT  & Notary (Raft, BFT) \\
+\hline
+\end{tabular}}
+\end{table}
+\alert{Summary}: While Quorum and Corda have their strengths in privacy, security, and specific enterprise applications, Hyperledger Fabric stands out due to its:
+\begin{itemize}
+\item High transaction throughput and performance;
+\item Modular and scalable architecture;
+\item Strong compliance with regulatory standards.
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}{Technical Implementation $(1)$}
+Let's focus on the technical implementation. \newline 
+
+
+\alert{Overview}: 
+\begin{itemize}
+\item The high-level architecture will consist of \underline{multiple layers} and \underline{components}, with specific functions residing on the blockchain to ensure security, transparency, and efficiency. 
+\item The architecture will also \underline{include off-chain components} for data storage and processing that do not require the blockchain's immutability and decentralization.
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Technical Implementation $(2)$}
+\alert{On-Chain Components}:
+%\vspace{-0.2cm}
+\begin{itemize}
+\item Digital Identity Management:
+	\begin{itemize}
+		\item Identity Creation and Registration; 
+		%store unique identifiers (e.g., hashed biometrics, personal data) for each refugee. Use smart contracts to automate and secure the registration process.
+		\item Identity Verification; 
+		%smart contracts to verify identities during access to services, and public key infrastructure (PKI) for secure identity authentication.
+	\end{itemize}
+\item Access Control and Permissions:
+	\begin{itemize}
+		\item Smart Contracts for Access Control; 
+		%manage permissions for who can read/write/update data on the blockchain, and ensure only authorized entities (e.g., government agencies, NGOs) can access or modify sensitive information
+	\end{itemize}
+\item Transaction Logging:
+	\begin{itemize}
+		\item Immutable Logs; 
+		%record all transactions (identity creation, updates, verifications) to provide an audit trail, and ensures transparency and traceability for all actions on the system.
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Technical Implementation $(3)$}
+\alert{Off-Chain Components}:
+\begin{itemize}
+\item Data Storage:
+	\begin{itemize}
+		\item Secure Off-Chain Storage; 
+		%store large and sensitive personal data (detailed biometric data, medical records) in a secure, distributed file system (e.g., IPFS, cloud storage); store only the hash references of these data on the blockchain to ensure integrity and immutability. 
+	\end{itemize}
+\item Application Layer:
+	\begin{itemize}
+		\item User Interfaces; 
+		%Web and mobile applications for refugees to manage their identities, and Interfaces for authorities and service providers to verify identities and update records.
+		\item API Gateway; 
+		%APIs to facilitate communication between the blockchain and external systems (e.g., government databases, service provider systems).
+	\end{itemize}
+\item Middleware: 
+	\begin{itemize}
+		\item Integration Layer; 
+		%middleware to connect on-chain smart contracts with off-chain data storage (external systems). Data synchronization to ensure consistency between on/off-chain.
+	\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{Architecture Diagram $(1)$}
+\vspace{0.1cm}
+\resizebox{0.9\textwidth}{!}{%
+\begin{tikzpicture}[
+node distance=1.5cm]
+
+% Nodes
+\node (arrival) [startstop] {Refugee Arrival};
+\node (contact) [process, below of=arrival] {\begin{tabular}{c}  Initial Contact\\ (Authorities) \end{tabular}};
+\node (registration) [process, below of=contact] {\begin{tabular}{c} Identity Registration\\ (Biometrics, Personal Data) \end{tabular}};
+
+
+
+% Arrows
+\draw [arrow] (arrival) -- (contact);
+\draw [arrow] (contact) -- (registration);
+
+\end{tikzpicture}}
+\end{frame}
+
+
+
+\begin{frame}{Architecture Diagram $(2)$}
+\vspace{0.6cm}
+\resizebox{0.9\textwidth}{!}{%
+\begin{tikzpicture}[
+node distance=3.0cm]
+
+% Nodes
+
+\node (onchain) [onchain] {\begin{tabular}{c} \underline{On-Chain}: Digital Identity;\\- Create \& Store ID Hashes\\- Issue Unique Identifier\\- Smart Contracts for Access \end{tabular}};  
+
+
+
+\node (offchain) [offchain, below of=onchain] {\begin{tabular}{c}  \underline{Off-Chain}: Secure Data Storage;\\ - Store Detailed Biometrics \& Medical Data\\ - Store Large Personal Documents\\ - Hash References Stored On-Chain \end{tabular}};
+
+
+% Arrows
+\draw [arrow] (onchain) -- (offchain);
+%\draw [arrow] (offchain) -- (access);
+%\draw [arrow] (access) -- (ui);
+%\draw [arrow] (ui) -- (middleware);
+
+% Labels
+%\draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=5pt},yshift=0pt] (6,-1.5) -- (6,-9.5) node [black,midway,xshift=0.8cm] {On-Chain};
+%\draw [decorate,decoration={brace,amplitude=10pt,raise=5pt},yshift=0pt] (6,-11) -- (6,-15) node [black,midway,xshift=0.8cm] {Off-Chain};
+\end{tikzpicture}}
+\end{frame}
+
+
+
+
+\begin{frame}{Architecture Diagram $(3)$}
+%\vspace{0.2cm}
+\resizebox{0.9\textwidth}{!}{%
+\begin{tikzpicture}[
+node distance=1.8cm]
+
+% Nodes
+
+\node (access) [onchain] {\begin{tabular}{c} Access \& Verification;\\ - Services (Healthcare, etc.)\\ - Verify ID via Blockchain \end{tabular}};
+
+\node (ui) [process, below of=access] {\begin{tabular}{c} User Interface (Web/Mobile);\\ - Refugee Identity Management\\ - Authorities' Access Control \end{tabular}};
+\node (middleware) [process, below of=ui] {\begin{tabular}{c} Middleware/API Gateway;\\ - Integrates On-Chain and Off-Chain\\ - Interfaces with External Systems \end{tabular}};
+
+
+% Arrows
+
+%\draw [arrow] (offchain) -- (access);
+\draw [arrow] (access) -- (ui);
+\draw [arrow] (ui) -- (middleware);
+
+% Labels
+%\draw [decorate,decoration={brace,amplitude=10pt,mirror,raise=5pt},yshift=0pt] (6,-1.5) -- (6,-9.5) node [black,midway,xshift=0.8cm] {On-Chain};
+%\draw [decorate,decoration={brace,amplitude=10pt,raise=5pt},yshift=0pt] (6,-11) -- (6,-15) node [black,midway,xshift=0.8cm] {Off-Chain};
+\end{tikzpicture}}
+\end{frame}
+
+
+
+
+
+
+
+
+
+\begin{frame}{Architecture Challenges $(1)$}
+We present the two major challenges for our solution.\newline 
+
+
+\underline{Data Security and Privacy}:
+\begin{itemize}
+\item Challenge: \underline{Protecting} sensitive personal and biometric data from unauthorized access and breaches.
+\item Addressing the Challenge:
+	\begin{itemize}
+		\item Encryption; 
+		%implement strong encryption for both data at rest and in transit.
+		\item Access Controls; 
+		%use fine-grained access controls and smart contracts to manage permissions.
+		\item Regular Audits; 
+		%conduct regular security audits and vulnerability assessments to identify and mitigate risks.	
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Architecture Challenges $(2)$}
+\underline{Adoption Incentives}:
+\begin{itemize}
+\item Challenge: Encouraging stakeholders (government agencies, NGOs, refugees) to \underline{adopt and trust the new system}.
+\item Addressing the Challenge:
+	\begin{itemize}
+		\item Pilot Programs; 
+		%start with pilot programs to demonstrate the system's benefits and build trust.
+		\item Stakeholder Engagement; 
+		%involve key stakeholders early in the development process to align the system with their needs and gain their support.
+		\item Incentives; 
+		%provide incentives for early adopters, such as improved service access for refugees or streamlined operations for authorities.	
+	\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Alternatives to Complement Blockchain Aspects}
+\alert{Question}: What alternatives could complement the blockchain aspects?
+\begin{enumerate}
+\item \underline{Distributed Storage Solutions}: 
+	\begin{itemize}
+		\item Example; InterPlanetary File System (IPFS).
+		\item Function; store large files and sensitive data off-chain while using the blockchain to store hash references, ensuring data integrity and availability without overloading the blockchain.
+	\end{itemize}
+\item \underline{Federated Identity Systems}:
+	\begin{itemize}
+		\item Example; Self-Sovereign Identity (SSI) Frameworks.
+		\item Function; allow refugees to manage their identities and control access to their personal data, enhancing privacy and user autonomy.
+	\end{itemize}
+\item \underline{Cloud-Based Infrastructure}:
+	\begin{itemize}
+		\item Example; Amazon Web Services (AWS), Microsoft Azure.
+		\item Function; provide scalable and compliant infrastructure for off-chain components, such as secure data storage and API gateways.
+	\end{itemize}
+\end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}
+Literature:
+\begin{itemize}
+\item \url{https://www.hyperledger.org/projects/fabric}
+\item \url{https://goquorum.readthedocs.io}
+\item \url{https://corda.net}
+\item Scholar GPT 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\centering \Large
+  \emph{Thank you for listening!}
+\end{frame}
+
+
+\end{document}
+

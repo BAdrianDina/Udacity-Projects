@@ -1,0 +1,356 @@
+\usepackage{beamerthemesplit}
+\setbeamercovered{invisible}
+\usepackage{verbatim}
+\usetheme{Frankfurt}
+\usepackage{mathtools}
+
+\usepackage{tikz}
+
+\usetikzlibrary{shapes.geometric, arrows, positioning, decorations.pathreplacing}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+\tikzstyle{process} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{onchain} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{offchain} = [rectangle, minimum width=3.5cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+
+
+\usetikzlibrary{trees}
+\usepackage{smartdiagram}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes.geometric}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+\usepackage{pgfmath-xfp,xfp}
+\usepackage{pdfpages}
+\usepackage[export]{adjustbox}
+\usepackage{algorithm2e}
+\usepackage{algorithmic}
+\usepackage{float}
+
+\setbeamercolor{alerted text}{fg=blue}
+
+\makeatletter
+\setbeamertemplate{headline}
+{%
+  \pgfuseshading{beamer@barshade}%
+  \ifbeamer@sb@subsection%
+    \vskip-9.75ex%
+  \else%
+    \vskip-7ex%
+  \fi%
+  \begin{beamercolorbox}[ignorebg,ht=2.25ex,dp=0.75ex]{section in head/foot}
+    \insertsectionnavigationhorizontal{\paperwidth}{}{\hfill\hfill}
+  \end{beamercolorbox}%
+  \ifbeamer@sb@subsection%
+    \begin{beamercolorbox}[ignorebg,ht=2.125ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
+      \usebeamerfont{subsection in head/foot}\insertsubsectionhead
+    \end{beamercolorbox}%
+  \fi%
+ \begin{beamercolorbox}[colsep=1.5pt,ht=.75ex]{upper separation line head}
+ \end{beamercolorbox}
+}%
+\makeatother
+
+% Remove navigation symbols:
+\setbeamertemplate{navigation symbols}{}
+
+\addtolength{\parskip}{0.5\baselineskip}
+\setlength{\arraycolsep}{2pt}
+
+% Font:
+% (Currently set to default Computer Modern)
+%\usepackage{mathpazo}
+
+% Encoding and languages:
+\usepackage[utf8]{inputenc}
+%\usepackage[OT2,T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+% Standard AMS packages:
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+
+% Calligraphic mathcal
+\usepackage[mathcal]{euscript}
+
+% Sha support:
+\usepackage[OT2,T1]{fontenc}
+\DeclareSymbolFont{cyrletters}{OT2}{wncyr}{m}{n}
+\DeclareMathSymbol{\Sha}{\mathalpha}{cyrletters}{"58}
+
+% Interior and exterior linking:
+\usepackage{url}
+\usepackage{hyperref}
+
+% Enumeration and tables:
+%\usepackage{enumitem}
+\usepackage{multirow}
+
+% Graphics and diagrams:
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+%\usepackage[all]{xy}
+% What follows is ugly, but very useful to quickly TeX large diagrams:
+\newenvironment{cd2}{\begin{equation*}\begin{tikzcd}}{\end{tikzcd}\end{equation*}}
+\newenvironment{cd3}{\begin{equation*}\begin{tikzcd}}{\end{tikzcd}\end{equation*}}
+\newenvironment{cd4}{\begin{equation*}\begin{tikzcd}}{\end{tikzcd}\end{equation*}}
+\newenvironment{cd5}{\begin{equation*}\begin{tikzcd}}{\end{tikzcd}\end{equation*}}
+\newenvironment{ses}{\begin{equation*}\begin{tikzcd}}{\end{tikzcd}\end{equation*}}
+
+% Better if statements:
+\usepackage{etoolbox}
+
+
+% Operator and symbol macros:
+\def\defi{\textsf}
+\def\ext{\!\mid\!}
+\def\limdir{\varinjlim}
+\def\liminv{\varprojlim}
+\def\eps{\varepsilon}
+\def\epsilon{\varepsilon}
+\def\theta{\vartheta}
+\def\phi{\varphi}
+\def\tilde{\widetilde}
+
+% Text macros:
+\def\Belyi{Bely\u{\i}}
+\def\LiE{\textsc{LiE}}
+\def\Magma{\textsc{Magma}}
+\def\SageMath{\textsc{SageMath}}
+\def\NB{\textbf{N.B.}}
+\def\cf{\textit{cf.}}
+\def\etal{\textit{et al.}}
+\def\etc{\textit{etc.}}
+\def\eg{\textit{e.g.}}
+\def\ie{\textit{i.e. }}
+\def\infra{\textit{infra}}
+\def\loccit{\textit{loc.\ cit.}}
+
+
+% Math operators:
+\DeclareMathOperator{\alg}{alg}
+\DeclareMathOperator{\Ell}{Ell}
+\DeclareMathOperator{\ab}{ab}
+\DeclareMathOperator{\ad}{ad}
+\DeclareMathOperator{\an}{an}
+\DeclareMathOperator{\AS}{AS}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Br}{Br}
+\DeclareMathOperator{\BT}{BT}
+\DeclareMathOperator{\Char}{char}
+\DeclareMathOperator{\chr}{char}
+\def\char{\text{char}}
+\DeclareMathOperator{\Cl}{Cl}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\cris}{cris}
+\DeclareMathOperator{\cts}{cts}
+\DeclareMathOperator{\Disc}{Disc}
+\DeclareMathOperator{\disc}{disc}
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\Pdiv}{Prin}
+\DeclareMathOperator{\ddiv}{div}
+\DeclareMathOperator{\et}{\acute{e}t}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Ext}{Ext}
+\DeclareMathOperator{\Frac}{Frac}
+\DeclareMathOperator{\Frob}{Frob}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\GO}{GO}
+\DeclareMathOperator{\GSp}{GSp}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Ind}{Ind}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\Jac}{Jac}
+\DeclareMathOperator{\Mon}{Mon}
+\DeclareMathOperator{\mult}{mult}
+\DeclareMathOperator{\new}{new}
+\DeclareMathOperator{\Nm}{Nm}
+\DeclareMathOperator{\Norm}{Nm}
+\DeclareMathOperator{\NS}{NS}
+\DeclareMathOperator{\old}{old}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Out}{Out}
+\DeclareMathOperator{\pgcd}{pgcd}
+\DeclareMathOperator{\Pic}{Pic}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\PSL}{PSL}
+\DeclareMathOperator{\PU}{PU}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\Proj}{Proj}
+\DeclareMathOperator{\res}{res}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\rig}{rig}
+\DeclareMathOperator{\sgn}{sgn}
+\DeclareMathOperator{\SL}{SL}
+\DeclareMathOperator{\SO}{SO}
+\DeclareMathOperator{\sol}{sol}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\ssim}{ss}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spf}{Spf}
+\DeclareMathOperator{\SU}{SU}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Tr}{Tr}
+\DeclareMathOperator{\tors}{tors}
+\DeclareMathOperator{\rk}{rk}
+\DeclareMathOperator{\Sel}{Sel}
+\DeclareMathOperator{\Twist}{Twist}
+\DeclareMathOperator{\Supp}{Supp}
+% Default pretty print macros:
+\def\l{\ell}
+\def\a{\mathfrak{a}}
+\def\b{\mathfrak{b}}
+\def\f{\mathfrak{f}}
+\def\m{\mathfrak{m}}
+\def\n{\mathfrak{n}}
+\def\p{\mathfrak{p}}
+\def\q{\mathfrak{q}}
+\def\r{\mathfrak{r}}
+\def\lf{\mathfrak{l}}
+\def\A{\mathbb{A}}
+\def\C{\mathbb{C}}
+\def\F{\mathbb{F}}
+\def\G{\mathbb{G}}
+\def\H{\mathcal{H}}
+\def\L{\mathcal{L}}
+\def\N{\mathbb{N}}
+\def\O{\mathcal{O}}
+\def\P{\mathbb{P}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+\def\T{\mathbb{T}}
+\def\Z{\mathbb{Z}}
+
+% Overline macros:
+\def\abar{\overline{a}}
+\def\bbar{\overline{b}}
+\def\fbar{\overline{f}}
+\def\kbar{\overline{k}}
+\def\xbar{\overline{x}}
+\def\Cbar{\overline{C}}
+\def\Ebar{\overline{E}}
+\def\Fbar{\overline{\F}}
+\def\Gbar{\overline{G}}
+\def\Kbar{\overline{K}}
+\def\Qbar{\overline{\Q}}
+\def\xbar{\overline{x}}
+\def\Xbar{\overline{X}}
+\def\ybar{\overline{y}}
+\def\Ybar{\overline{Y}}
+\def\Zbar{\overline{Z}}
+\def\phibar{\overline{\varphi}}
+
+% Hat macros:
+\def\Phat{\widehat{P}}
+\def\Xhat{\widehat{X}}
+\def\Yhat{\widehat{Y}}
+\def\Zhat{\widehat{Z}}
+
+% Blackboard bold macros:
+\def\AA{\mathbb{A}}
+\def\CC{\mathbb{C}}
+\def\FF{\mathbb{F}}
+\def\HH{\mathbb{H}}
+\def\NN{\mathbb{N}}
+\def\PP{\mathbb{P}}
+\def\QQ{\mathbb{Q}}
+\def\RR{\mathbb{R}}
+\def\TT{\mathbb{T}}
+\def\ZZ{\mathbb{Z}}
+
+% Bold macros:
+\def\Ab{\mathbf{A}}
+\def\cb{\mathbf{c}}
+\def\Cb{\mathbf{C}}
+\def\Db{\mathbf{D}}
+\def\Fb{\mathbf{F}}
+\def\Gb{\mathbf{G}}
+\def\Hb{\mathbf{H}}
+\def\Nb{\mathbf{N}}
+\def\Pb{\mathbf{P}}
+\def\Qb{\mathbf{Q}}
+\def\Rb{\mathbf{R}}
+\def\Sb{\mathbf{S}}
+\def\ub{\mathbf{u}}
+\def\Zb{\mathbf{Z}}
+
+% Calligraphic macros:
+\def\Ac{\mathcal{A}}
+\def\Bc{\mathcal{B}}
+\def\Cc{\mathcal{C}}
+\def\Dc{\mathcal{D}}
+\def\Ec{\mathcal{E}}
+\def\Fc{\mathcal{F}}
+\def\Hc{\mathcal{H}}
+\def\Mc{\mathcal{M}}
+\def\Nc{\mathcal{N}}
+\def\Oc{\mathcal{O}}
+\def\Pc{\mathcal{P}}
+\def\Rc{\mathcal{R}}
+\def\Sc{\mathcal{S}}
+\def\Tc{\mathcal{T}}
+\def\Uc{\mathcal{U}}
+\def\Xc{\mathcal{X}}
+\def\Yc{\mathcal{Y}}
+
+%Fraktur macros:
+\def\af{\mathfrak{a}}
+\def\nf{\mathfrak{n}}
+\def\Nf{\mathfrak{N}}
+\def\pf{\mathfrak{p}}
+\def\Pf{\mathfrak{P}}
+\def\qf{\mathfrak{q}}
+\def\Qf{\mathfrak{Q}}
+\def\rf{\mathfrak{r}}
+\def\Rf{\mathfrak{R}}
+
+% Pretty / script macros:
+\def\Ap{\mathscr{A}}
+\def\Bp{\mathscr{B}}
+\def\Cp{\mathscr{C}}
+\def\Dp{\mathscr{D}}
+\def\Ep{\mathscr{E}}
+\def\Fp{\mathscr{F}}
+\def\Hp{\mathscr{H}}
+\def\Mp{\mathscr{M}}
+\def\Np{\mathscr{N}}
+\def\Op{\mathscr{O}}
+\def\Pp{\mathscr{P}}
+\def\Rp{\mathscr{R}}
+\def\Tp{\mathscr{T}}
+\def\Xp{\mathscr{X}}
+\def\Yp{\mathscr{Y}}
+\def\Zp{\mathscr{Z}}
+
+% Sans serif macros:
+\def\As{\mathsf{A}}
+\def\Cs{\mathsf{C}}
+\def\Fs{\mathsf{F}}
+\def\Hs{\mathsf{H}}
+\def\Qs{\mathsf{Q}}
+\def\Ms{\mathsf{M}}
+\def\Ss{\mathsf{S}}
+\def\Vs{\mathsf{V}}
+\def\Xs{\mathsf{X}}
+\def\Ys{\mathsf{Y}}
+
+
+\newtheorem{proposition}{Proposition}
+
+\newcommand{\adrian}[1]{{\color{blue} \sf
+    $\spadesuit\spadesuit\spadesuit$ Adrian: [#1]}}
+    
+    
+\newcommand\makenode[1]{node [text width={max(0.3*width("#1"),3cm)}] {#1}}
