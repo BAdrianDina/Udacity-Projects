@@ -1,0 +1,10 @@
+/Users/bogdandina/repos/rust/projects/ramanujan/target/debug/deps/futures_task-97df2c1b4fd31099.rmeta: /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/lib.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/spawn.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/future_obj.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/noop_waker.rs
+
+/Users/bogdandina/repos/rust/projects/ramanujan/target/debug/deps/libfutures_task-97df2c1b4fd31099.rlib: /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/lib.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/spawn.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/future_obj.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/noop_waker.rs
+
+/Users/bogdandina/repos/rust/projects/ramanujan/target/debug/deps/futures_task-97df2c1b4fd31099.d: /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/lib.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/spawn.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/future_obj.rs /Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/noop_waker.rs
+
+/Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/lib.rs:
+/Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/spawn.rs:
+/Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/future_obj.rs:
+/Users/bogdandina/.cargo/registry/src/index.crates.io-6f17d22bba15001f/futures-task-0.3.28/src/noop_waker.rs:

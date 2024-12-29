@@ -1,0 +1,13 @@
+[package]
+name = "ramanujan"
+version = "0.1.0"
+edition = "2021"
+authors = ["Bogdan Adrian Dina <bogdanadrian.dina@gmail.com>"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[dependencies.cayley]
+git = "https://github.com/shamansir/cayley-rust"
+doc = false
