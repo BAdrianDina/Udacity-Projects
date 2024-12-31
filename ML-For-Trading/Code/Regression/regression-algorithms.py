@@ -1,4 +1,8 @@
 import numpy as np
+from collections import Counter
+import matplotlib.pyplot as plt
+
+
 
 # Linear Regression class
 class LinearRegression:
@@ -64,16 +68,6 @@ print(f"Bias: {model.bias}")
 
 
 
-
-
-
-
-# K-nearest neighbours ##########################################
-
-
-import numpy as np
-from collections import Counter
-import matplotlib.pyplot as plt
 
 # K-Nearest Neighbors Classifier
 class KNearestNeighbors:
